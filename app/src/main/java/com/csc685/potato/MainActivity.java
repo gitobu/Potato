@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText editText = findViewById(R.id.editTextYourName);
                 TextView textView = findViewById(R.id.textViewNameDisplay);
-                String completer = " was here.";
+                String completer = " was not here.";
                 String entered = editText.getText().toString();
                 textView.setText(entered + completer);
             }
