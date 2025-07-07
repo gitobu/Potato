@@ -27,16 +27,25 @@ public class MainActivity extends AppCompatActivity {
         addStuff();
     }
     private void addStuff(){
-
         Button button = findViewById(R.id.buttonOperate);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText editText = findViewById(R.id.editTextYourName);
                 TextView textView = findViewById(R.id.textViewNameDisplay);
-                String completer = " was not here.";
-                String entered = editText.getText().toString();
-                textView.setText(entered + completer);
+                //String completer = " was not here.";
+                //String entered = editText.getText().toString();
+                //String enteredWeight = editText.getText().toString();
+                int luggageWeight = Integer.parseInt(editText.getText().toString());
+                //textView.setText(entered + completer);
+                //int weight = 20;
+                if (luggageWeight > 50){
+                    String assessment = "Your luggage is " + luggageWeight + " lbs. It is overweight.";
+                    textView.setText(assessment);
+                } else {
+                    String assessment = "Your luggage weight is " + luggageWeight + "lbs. It is the allowed limit.";
+                    textView.setText(assessment);
+                }
             }
         });
     }
